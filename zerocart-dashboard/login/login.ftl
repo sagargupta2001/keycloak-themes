@@ -17,7 +17,7 @@
   section
 >
   <#if section="header">
-    ${msg("loginAccountTitledsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdf")}
+    ${msg("loginAccountTitle")}
   <#elseif section="form">
     <#if realm.password>
       <@form.kw
@@ -69,19 +69,6 @@
           </@button.kw>
         </@buttonGroup.kw>
       </@form.kw>
-    </#if>
-  <#elseif section="info">
-    <#if realm.password && realm.registrationAllowed && !registrationDisabled??>
-      <div class="text-center">
-        ${msg("noAccount")}
-        <@link.kw color="primary" href=url.registrationUrl>
-          ${msg("doRegister")}
-        </@link.kw>
-      </div>
-    </#if>
-  <#elseif section="socialProviders">
-    <#if realm.password && social.providers??>
-      <@identityProvider.kw providers=social.providers />
     </#if>
   </#if>
 </@layout.registrationLayout>
